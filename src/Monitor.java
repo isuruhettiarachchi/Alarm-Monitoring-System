@@ -88,7 +88,7 @@ public class Monitor extends UnicastRemoteObject implements Listeners, Runnable 
 		panel2.add(scrollPaneSensors);
 		table.setAutoscrolls(true);
 		table.setCellSelectionEnabled(true);
-		messageArea.append("Some string");
+		messageArea.append("Monitor started");
 
 		frame.add(panel2);
 

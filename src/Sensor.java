@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.net.UnknownHostException;
 import java.time.LocalDateTime;
 import java.util.Random;
 
@@ -140,10 +139,11 @@ public class Sensor {
 						out.println("DataCritical" + sensorId + ">>" + getCurrentTime() + ">>" + temperature + ">>"
 								+ batteryLevel + ">>" + smokeLevel + ">>" + CO2Level);
 					}
+					
 
 					// Shutdown sensor when battery level is 0
 					if (batteryLevel == 0) {
-						// TODO : Shutdown sensor
+						Thread.currentThread().interrupt();
 					}
 
 					// Sleep thread for 5 minutes and update the values
